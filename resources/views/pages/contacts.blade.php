@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h1>Contact List</h1>
-	<div><a href="{{ URL::to('/') }}" class="btn btn-primary mr-1">Home</a><a href="" class="btn btn-primary mr-1">Add Contact</a></div>
+	<div><a href="{{ URL::to('/') }}" class="btn btn-primary mr-1">Home</a><a href="{{ URL::to('/add-contact') }}" class="btn btn-primary mr-1">Add Contact</a></div>
 	<table class="table table-hover">
   <thead>
     <tr>
@@ -27,7 +27,7 @@
 	      <td>{{ $contact->name }}</td>
 	      <td>{{ $contact->email }}</td>
 	      <td>{{ $contact->description }}</td>
-	      <td><a href="" class="btn btn-sm btn-primary mr-1">Edit</a><a href="" class="btn btn-sm btn-warning mr-1">Delete</a><a href="" class="btn btn-sm btn-success mr-1">View</a></td>
+	      <td><a href="{{ URL::to('/edit-contact/'.$contact->id) }}" class="btn btn-sm btn-primary mr-1">Edit</a><a href="{{ URL::to('/delete-contact/'.$contact->id) }}" class="btn btn-sm btn-danger mr-1">Delete</a><a href="{{ URL::to('/view-contact/'.$contact->id) }}" class="btn btn-sm btn-success mr-1">View</a></td>
 	    </tr>
 	@endforeach
  
